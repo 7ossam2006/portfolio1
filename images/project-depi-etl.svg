@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="depiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#0f1f42" />
+      <stop offset="100%" stop-color="#0a1224" />
+    </linearGradient>
+    <linearGradient id="depiCyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3a7bd5" />
+    </linearGradient>
+    <linearGradient id="depiVioletGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="depiCardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#142145" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0d1730" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="depiGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#depiBg)" rx="12"/>
+  <rect width="800" height="500" fill="url(#gridPattern)" rx="12"/>
+
+  <!-- Subtle glow circles -->
+  <circle cx="200" cy="180" r="140" fill="#00d2ff" fill-opacity="0.06" filter="url(#depiGlow)"/>
+  <circle cx="620" cy="300" r="120" fill="#8b5cf6" fill-opacity="0.08" filter="url(#depiGlow)"/>
+
+  <!-- Top Banner Title Bar -->
+  <rect x="25" y="20" width="750" height="36" rx="8" fill="#111c38" stroke="#1e2f5d" stroke-width="1"/>
+  <circle cx="45" cy="38" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="62" cy="38" r="5" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="79" cy="38" r="5" fill="#10b981" opacity="0.8"/>
+  <text x="105" y="42" fill="#94a3b8" font-family="'JetBrains Mono', Consolas, monospace" font-size="12">DEPI_Data_Engineering_Workflow.py // ERD Schema &amp; ETL Pipeline</text>
+  <rect x="670" y="27" width="90" height="22" rx="4" fill="#00d2ff" fill-opacity="0.15" stroke="#00d2ff" stroke-width="0.8"/>
+  <text x="682" y="42" fill="#00d2ff" font-family="sans-serif" font-size="10" font-weight="600">IN PROGRESS</text>
+
+  <!-- Section 1: ERD Entity Table (Left) -->
+  <g transform="translate(45, 80)">
+    <!-- Entity Card: Customers -->
+    <rect width="210" height="150" rx="8" fill="url(#depiCardBg)" stroke="#00d2ff" stroke-width="1.2" stroke-opacity="0.7"/>
+    <rect width="210" height="32" rx="8" fill="#00d2ff" fill-opacity="0.2"/>
+    <rect y="24" width="210" height="8" fill="#00d2ff" fill-opacity="0.2"/>
+    <text x="15" y="21" fill="#f8fafc" font-family="'Poppins', sans-serif" font-weight="600" font-size="12">TABLE: customers</text>
+    <text x="15" y="52" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">PK  customer_id</text>
+    <text x="150" y="52" fill="#64748b" font-family="monospace" font-size="10">INT</text>
+    <text x="15" y="74" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">    full_name</text>
+    <text x="150" y="74" fill="#64748b" font-family="monospace" font-size="10">VARCHAR</text>
+    <text x="15" y="96" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">    email_address</text>
+    <text x="150" y="96" fill="#64748b" font-family="monospace" font-size="10">VARCHAR</text>
+    <text x="15" y="118" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">    city_location</text>
+    <text x="150" y="118" fill="#64748b" font-family="monospace" font-size="10">VARCHAR</text>
+    <text x="15" y="138" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="11">FK  region_id</text>
+    <text x="150" y="138" fill="#64748b" font-family="monospace" font-size="10">INT</text>
+  </g>
+
+  <!-- Section 2: Entity Card: Transactions / Orders (Bottom Left) -->
+  <g transform="translate(45, 270)">
+    <rect width="210" height="170" rx="8" fill="url(#depiCardBg)" stroke="#8b5cf6" stroke-width="1.2" stroke-opacity="0.7"/>
+    <rect width="210" height="32" rx="8" fill="#8b5cf6" fill-opacity="0.2"/>
+    <rect y="24" width="210" height="8" fill="#8b5cf6" fill-opacity="0.2"/>
+    <text x="15" y="21" fill="#f8fafc" font-family="'Poppins', sans-serif" font-weight="600" font-size="12">TABLE: transactions</text>
+    <text x="15" y="52" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">PK  trans_id</text>
+    <text x="150" y="52" fill="#64748b" font-family="monospace" font-size="10">BIGINT</text>
+    <text x="15" y="74" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="11">FK  customer_id</text>
+    <text x="150" y="74" fill="#64748b" font-family="monospace" font-size="10">INT</text>
+    <text x="15" y="96" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">    order_date</text>
+    <text x="150" y="96" fill="#64748b" font-family="monospace" font-size="10">DATETIME</text>
+    <text x="15" y="118" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11">    gross_amount</text>
+    <text x="150" y="118" fill="#64748b" font-family="monospace" font-size="10">DECIMAL</text>
+    <text x="15" y="138" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="11">    status_code</text>
+    <text x="150" y="138" fill="#64748b" font-family="monospace" font-size="10">VARCHAR</text>
+    <text x="15" y="158" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">-- Normalized (3NF)</text>
+  </g>
+
+  <!-- ERD Relationship Line (1 to Many) -->
+  <path d="M 150 230 L 150 270" stroke="#00d2ff" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="150" cy="230" r="3" fill="#00d2ff"/>
+  <polygon points="146,266 154,266 150,274" fill="#00d2ff"/>
+
+  <!-- Pipeline Connector Arrows & Waves to ETL Stage -->
+  <path d="M 255 155 Q 310 155 330 200 T 360 250" fill="none" stroke="#00d2ff" stroke-width="2.5" opacity="0.8"/>
+  <path d="M 255 355 Q 310 355 330 300 T 360 270" fill="none" stroke="#8b5cf6" stroke-width="2.5" opacity="0.8"/>
+
+  <!-- Central Processing Stage (Data Cleaning & Pandas) -->
+  <g transform="translate(350, 140)">
+    <rect width="180" height="230" rx="10" fill="#101c38" stroke="#38bdf8" stroke-width="1.4"/>
+    <rect width="180" height="34" rx="10" fill="#1e293b"/>
+    <text x="18" y="22" fill="#00d2ff" font-family="'Poppins', sans-serif" font-weight="600" font-size="12">Pandas Data Cleaning</text>
+    
+    <!-- Code Snippet preview -->
+    <g transform="translate(10, 45)">
+      <rect width="160" height="170" rx="6" fill="#0b1224"/>
+      <text x="8" y="22" fill="#ec4899" font-family="'JetBrains Mono', monospace" font-size="9.5">import pandas as pd</text>
+      <text x="8" y="42" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9"># Clean &amp; Validate</text>
+      <text x="8" y="60" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9">df.drop_duplicates()</text>
+      <text x="8" y="78" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="9">df['amt'].fillna(0)</text>
+      <text x="8" y="96" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9"># Type Casting</text>
+      <text x="8" y="114" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="9">df['date']=to_date()</text>
+      <text x="8" y="132" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9"># Schema Validation</text>
+      <text x="8" y="150" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="9">validate_3nf(df) ✓</text>
+    </g>
+  </g>
+
+  <!-- Arrow from Cleaning to Target Database -->
+  <path d="M 530 255 L 580 255" fill="none" stroke="url(#depiCyanGrad)" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="555" cy="255" r="4" fill="#00d2ff"/>
+
+  <!-- Section 3: Data Warehouse / Target SQL Database (Right) -->
+  <g transform="translate(580, 110)">
+    <rect width="180" height="280" rx="10" fill="url(#depiCardBg)" stroke="#10b981" stroke-width="1.3"/>
+    
+    <!-- Database Cylinder Header -->
+    <ellipse cx="90" cy="30" rx="70" ry="15" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-width="1.5"/>
+    <text x="90" y="34" text-anchor="middle" fill="#f8fafc" font-family="'Poppins', sans-serif" font-weight="600" font-size="12">SQL Database</text>
+    
+    <!-- Pipeline Milestones -->
+    <g transform="translate(15, 65)">
+      <!-- Step 1 -->
+      <circle cx="12" cy="12" r="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="16" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="700">✓</text>
+      <text x="28" y="14" fill="#f8fafc" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">ERD Schema</text>
+      <text x="28" y="27" fill="#64748b" font-family="sans-serif" font-size="9">Relational structure</text>
+
+      <!-- Step 2 -->
+      <circle cx="12" cy="52" r="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="56" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="700">✓</text>
+      <text x="28" y="54" fill="#f8fafc" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">Data Cleaning</text>
+      <text x="28" y="67" fill="#64748b" font-family="sans-serif" font-size="9">Duplicates &amp; Nulls fixed</text>
+
+      <!-- Step 3 -->
+      <circle cx="12" cy="92" r="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="96" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="700">✓</text>
+      <text x="28" y="94" fill="#f8fafc" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">Data Modeling</text>
+      <text x="28" y="107" fill="#64748b" font-family="sans-serif" font-size="9">Entities &amp; Relations</text>
+
+      <!-- Step 4 -->
+      <circle cx="12" cy="135" r="8" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1.5"/>
+      <circle cx="12" cy="135" r="3" fill="#f59e0b"/>
+      <text x="28" y="137" fill="#fbbf24" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">ETL Pipelines</text>
+      <text x="28" y="150" fill="#fbbf24" font-family="sans-serif" font-size="9">In Progress (DEPI)</text>
+
+      <!-- Step 5 -->
+      <circle cx="12" cy="178" r="8" fill="#64748b" fill-opacity="0.2" stroke="#64748b" stroke-width="1.5"/>
+      <text x="28" y="180" fill="#94a3b8" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">Automated Flows</text>
+      <text x="28" y="193" fill="#64748b" font-family="sans-serif" font-size="9">Upcoming phase</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tech Badges -->
+  <g transform="translate(45, 460)">
+    <text x="0" y="16" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">STACK:</text>
+    <rect x="55" y="2" width="75" height="20" rx="4" fill="#1e293b"/>
+    <text x="65" y="16" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">Python</text>
+    
+    <rect x="138" y="2" width="75" height="20" rx="4" fill="#1e293b"/>
+    <text x="148" y="16" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">Pandas</text>
+    
+    <rect x="221" y="2" width="60" height="20" rx="4" fill="#1e293b"/>
+    <text x="231" y="16" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">SQL</text>
+    
+    <rect x="289" y="2" width="95" height="20" rx="4" fill="#1e293b"/>
+    <text x="299" y="16" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="10">ERD Modeling</text>
+    
+    <rect x="392" y="2" width="125" height="20" rx="4" fill="#1e293b"/>
+    <text x="402" y="16" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">ETL Fundamentals</text>
+  </g>
+</svg>

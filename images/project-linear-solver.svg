@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="winBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1726" />
+      <stop offset="100%" stop-color="#141c2e" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <pattern id="dotPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#334155" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#winBg)" rx="12"/>
+  <rect width="800" height="500" fill="url(#dotPattern)" rx="12"/>
+
+  <!-- Application Window Frame (Windows Forms style modernized) -->
+  <g transform="translate(30, 20)">
+    <!-- Window outer box -->
+    <rect width="740" height="460" rx="8" fill="#17223b" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Title bar -->
+    <path d="M 0 8 Q 0 0 8 0 L 732 0 Q 740 0 740 8 L 740 38 L 0 38 Z" fill="#0f172a"/>
+    <rect x="12" y="10" width="18" height="18" rx="3" fill="#8b5cf6"/>
+    <text x="21" y="23" text-anchor="middle" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">∑</text>
+    <text x="38" y="24" fill="#f8fafc" font-family="'Poppins', sans-serif" font-size="12" font-weight="600">Linear System Solver — C# Windows Forms Application</text>
+    
+    <!-- Window Controls (Minimize, Maximize, Close) -->
+    <circle cx="680" cy="19" r="6" fill="#475569"/>
+    <circle cx="700" cy="19" r="6" fill="#475569"/>
+    <circle cx="720" cy="19" r="6" fill="#ef4444"/>
+
+    <!-- Top Menu / Toolbar -->
+    <rect x="0" y="38" width="740" height="32" fill="#1e293b"/>
+    <text x="15" y="58" fill="#94a3b8" font-family="sans-serif" font-size="11">System: <tspan fill="#38bdf8" font-weight="bold">3 × 3 Linear System</tspan></text>
+    <text x="180" y="58" fill="#94a3b8" font-family="sans-serif" font-size="11">Algorithm: <tspan fill="#a78bfa" font-weight="bold">Gaussian &amp; Gauss-Jordan Elimination</tspan></text>
+    <text x="490" y="58" fill="#94a3b8" font-family="sans-serif" font-size="11">Arithmetic: <tspan fill="#10b981" font-weight="bold">Custom Fraction Class</tspan></text>
+
+    <!-- Main Equation Matrix Input Area (DataGridView) -->
+    <g transform="translate(20, 85)">
+      <text x="0" y="16" fill="#e2e8f0" font-family="'Poppins', sans-serif" font-size="13" font-weight="600">Coefficient &amp; Constant Matrix [A | B] (DataGridView)</text>
+      
+      <!-- Table Header -->
+      <rect x="0" y="28" width="370" height="28" fill="#0f172a" rx="4"/>
+      <text x="45" y="46" text-anchor="middle" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">x₁</text>
+      <text x="125" y="46" text-anchor="middle" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">x₂</text>
+      <text x="205" y="46" text-anchor="middle" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">x₃</text>
+      <line x1="265" y1="28" x2="265" y2="185" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <text x="315" y="46" text-anchor="middle" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">b (Constant)</text>
+
+      <!-- Row 1 -->
+      <rect x="0" y="60" width="370" height="38" fill="#1e293b" opacity="0.6"/>
+      <rect x="15" y="65" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="45" y="84" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">2</text>
+      <rect x="95" y="65" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="125" y="84" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">1</text>
+      <rect x="175" y="65" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="205" y="84" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">-1</text>
+      <rect x="285" y="65" width="60" height="28" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8"/>
+      <text x="315" y="84" text-anchor="middle" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="12">8</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="102" width="370" height="38" fill="#1e293b" opacity="0.4"/>
+      <rect x="15" y="107" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="45" y="126" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">-3</text>
+      <rect x="95" y="107" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="125" y="126" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">-1</text>
+      <rect x="175" y="107" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="205" y="126" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">2</text>
+      <rect x="285" y="107" width="60" height="28" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8"/>
+      <text x="315" y="126" text-anchor="middle" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="12">-11</text>
+
+      <!-- Row 3 -->
+      <rect x="0" y="144" width="370" height="38" fill="#1e293b" opacity="0.6"/>
+      <rect x="15" y="149" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="45" y="168" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">-2</text>
+      <rect x="95" y="149" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="125" y="168" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">1</text>
+      <rect x="175" y="149" width="60" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="205" y="168" text-anchor="middle" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">2</text>
+      <rect x="285" y="149" width="60" height="28" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8"/>
+      <text x="315" y="168" text-anchor="middle" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="12">-3</text>
+
+      <!-- Action Buttons -->
+      <rect x="0" y="200" width="175" height="34" rx="6" fill="#8b5cf6"/>
+      <text x="87" y="222" text-anchor="middle" fill="#ffffff" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">Solve via Gauss-Jordan</text>
+
+      <rect x="195" y="200" width="175" height="34" rx="6" fill="#1e293b" stroke="#475569"/>
+      <text x="282" y="222" text-anchor="middle" fill="#e2e8f0" font-family="'Poppins', sans-serif" font-size="11" font-weight="500">Gaussian Elimination</text>
+    </g>
+
+    <!-- Right Side: Step-by-Step Row Reduction & Solution (Fraction arithmetic) -->
+    <g transform="translate(415, 85)">
+      <text x="0" y="16" fill="#e2e8f0" font-family="'Poppins', sans-serif" font-size="13" font-weight="600">Fractional Math &amp; Output Console</text>
+      
+      <rect x="0" y="28" width="305" height="206" rx="6" fill="#0b1224" stroke="#1e293b"/>
+      
+      <text x="14" y="52" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">&gt; Initializing Custom Fraction class...</text>
+      <text x="14" y="74" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10.5">R₂ ← R₂ + (3/2)R₁</text>
+      <text x="14" y="94" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10.5">R₃ ← R₃ + (1)R₁</text>
+      <text x="14" y="116" fill="#a78bfa" font-family="'JetBrains Mono', monospace" font-size="10.5">Pivot normalization: exact fractions</text>
+      
+      <!-- Divider -->
+      <line x1="14" y1="130" x2="290" y2="130" stroke="#1e293b"/>
+
+      <!-- Final exact fraction solution -->
+      <text x="14" y="152" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">Solution Vector (Exact Fractions):</text>
+      <text x="25" y="176" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="13">x₁ = <tspan fill="#00d2ff" font-weight="bold">2</tspan></text>
+      <text x="110" y="176" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="13">x₂ = <tspan fill="#00d2ff" font-weight="bold">3</tspan></text>
+      <text x="195" y="176" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="13">x₃ = <tspan fill="#00d2ff" font-weight="bold">-1</tspan></text>
+
+      <rect x="14" y="195" width="275" height="26" rx="4" fill="#10b981" fill-opacity="0.12"/>
+      <text x="25" y="212" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10.5">Status: System Solved Successfully ✓</text>
+    </g>
+
+    <!-- Bottom Features Bar -->
+    <g transform="translate(20, 340)">
+      <rect width="700" height="95" rx="6" fill="#111c33" stroke="#1e293b"/>
+      <text x="15" y="24" fill="#94a3b8" font-family="'Poppins', sans-serif" font-size="11" font-weight="600">KEY ARCHITECTURE &amp; OOP HIGHLIGHTS:</text>
+      
+      <circle cx="22" cy="48" r="4" fill="#8b5cf6"/>
+      <text x="34" y="52" fill="#e2e8f0" font-family="sans-serif" font-size="11">Custom Fraction arithmetic avoiding floating point rounding errors</text>
+
+      <circle cx="22" cy="73" r="4" fill="#38bdf8"/>
+      <text x="34" y="77" fill="#e2e8f0" font-family="sans-serif" font-size="11">C# Windows Forms with dynamic DataGridView coefficient binding</text>
+
+      <circle cx="390" cy="48" r="4" fill="#10b981"/>
+      <text x="402" y="52" fill="#e2e8f0" font-family="sans-serif" font-size="11">Modular Gaussian &amp; Gauss-Jordan numerical solvers</text>
+
+      <circle cx="390" cy="73" r="4" fill="#fbbf24"/>
+      <text x="402" y="77" fill="#e2e8f0" font-family="sans-serif" font-size="11">Robust handling for inconsistent &amp; dependent systems</text>
+    </g>
+  </g>
+</svg>
